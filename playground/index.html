@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="node_modules/d3/d3.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen">
+    
+    
+  </head>
+  <body class="container">
+    <h1 id="first_example:_playground">First Example: Playground</h1>
+    <div class="row">
+      <div class="col-md-12" id="viz">
+        
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    // let's create a dataset as a sequenze of numbers
+    var numbers = [1,2,14,15,10,8];
+      
+    // create an SVG element within the DIV with ID #viz
+    var svg = d3.select("#viz")
+      .append("svg")
+      .attr("width",600)
+    .attr("height",400);
+    
+    
+    
+  </script>
+</html>
