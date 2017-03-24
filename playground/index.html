@@ -29,7 +29,14 @@
     .data(numbers) // join the set with the sequence of numbers
     .enter() // for the data entries without an HTML element....
     .append("circle") // ... append a circle
-    .attr("r", 40);  // with a constant radius for all the elements
+    .attr("r", radius);  // with a constant radius for all the elements
+    
+    function radius(d){
+        // map the date entries with a linear function
+        return d*5;
+    }
+    
+    
     
   </script>
 </html>
