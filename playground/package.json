@@ -1,0 +1,15 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Salvatore Rinzivillo (rinzivillo@isti.cnr.it)",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "d3": "^3.5.17"
+  }
+}
