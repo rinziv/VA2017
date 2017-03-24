@@ -44,7 +44,12 @@
     //     return i*100;
     // }
     //
-    
+    d3.select(".row")
+        .selectAll("p")
+        .data(numbers)
+        .enter()
+        .append("p")
+    .text(function(d){return "Number: " + d});
     
   </script>
 </html>
