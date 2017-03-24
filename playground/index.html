@@ -24,7 +24,12 @@
       .attr("width",600)
     .attr("height",400);
     
-    
+    // Create a visual element (a circle) for each data entry
+    svg.selectAll("circle")  // select all elements with tag "circles" (in this first selection we obtain an empty set)
+    .data(numbers) // join the set with the sequence of numbers
+    .enter() // for the data entries without an HTML element....
+    .append("circle") // ... append a circle
+    .attr("r", 40);  // with a constant radius for all the elements
     
   </script>
 </html>
