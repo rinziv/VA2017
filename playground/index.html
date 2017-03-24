@@ -29,13 +29,21 @@
     .data(numbers) // join the set with the sequence of numbers
     .enter() // for the data entries without an HTML element....
     .append("circle") // ... append a circle
-    .attr("r", radius);  // with a constant radius for all the elements
+    .attr("cx", function(d,i){return i*100}) // move each circle at step of 100pixels
+    .attr("cy", 200) // vertical alignment is fixed for all circles
+    .attr("r", function(d){return d*5});  // with a constant radius for all the elements
     
-    function radius(d){
-        // map the date entries with a linear function
-        return d*5;
-    }
-    
+    // function radius(d){
+    //     // map the date entries with a linear function
+    //     return d*5;
+    // }
+    //
+    // function posx(d,i){
+    //     // map each circle to a specific x coordinate
+    //     // the center of each circle is distant 100 pixels from the previous (successive) circle
+    //     return i*100;
+    // }
+    //
     
     
   </script>
