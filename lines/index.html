@@ -29,13 +29,17 @@
 			.enter()
 			.append("g")
 			.attr("transform",function(d,i){
-				return "translate(10,"+(i*10+10)+")";
+				return "translate(10,"+(i*14+10)+")";
 			});
 			
 		gs.append("line")
 			.attr("x2",function(d){return d})
 			.attr("stroke","black")
 			;
+			
+		gs.append("text")
+			.attr("x",function(d){return d + 4})
+			.text(function(d){return d});
 		</script>
 	</body>
 </html>
