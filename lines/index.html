@@ -15,6 +15,32 @@
 				
 			</div>
 		</div>
+		<script type="text/javascript">
+			// get a new dataset
+		var numbers = [10,30,60,100,250,80,134,42,99];
 		
+		var svg = d3.select("#viz")
+			.append("svg")
+			.attr("width",600)
+		.attr("height",400);
+		
+		svg.selectAll("line")
+			.data(numbers)
+			.enter()
+			.append("line")
+			.attr("x1",10)
+			.attr("y1",function(d,i){return 10*i+10})
+			.attr("y2",function(d,i){return 10*i+10})
+			.attr("x2",function(d){return 10 + d})
+			.attr("stroke","black")
+			.attr("stroke-width",4)
+			
+			;
+			
+			
+			function posy(d,i){
+				return 10*i;
+			}
+		</script>
 	</body>
 </html>
