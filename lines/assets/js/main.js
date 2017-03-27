@@ -1,5 +1,24 @@
 // get a new dataset
-var numbers = [10,30,60,100,250,80,134,42,99];
+var numbers = [];
+
+var n = Math.round(Math.random()*15);
+
+
+
+numbers = d3.range(n).map(function(d){
+	return Math.round(Math.random()*250);
+});
+
+//
+// for (var i = 0; i < n; i++) {
+// 	var r = Math.round(Math.random()*250);
+// 	numbers.push(r)
+// }
+
+	
+
+
+
 
 var svg = d3.select("#viz")
 	.append("svg")
