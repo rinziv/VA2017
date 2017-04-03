@@ -17,7 +17,7 @@ function generateNumbers(){
 	var n = Math.round(Math.random()*15);
 	
 	numbers = d3.range(n).map(function(d){
-		return Math.round(Math.random()*250);
+		return Math.round(Math.random()*2500);
 	});
 	console.log("numbers",numbers);
 	return numbers;
@@ -42,15 +42,20 @@ function visualizeNumbers(myNumbers){
 	gsToAdd.append("text").attr("x",0);	
 		
 	// update
+	var scale = d3.scale.linear()
+		.domain([0,2500])
+	.range([0,580]);
+	
+	
 	gs.select("line")
 		.transition()
-		.attr("x2",function(d){return d})
+		.attr("x2",scale)
 		.duration(1500)
 		;
 	
 	gs.select("text")
 		.transition()
-		.attr("x",function(d){return d + 4})
+		.attr("x",function(d){return scale(d)+4})
 		.duration(1500)
 		.text(function(d){return d});
 }
