@@ -6,12 +6,30 @@
 // 	var r = Math.round(Math.random()*250);
 // 	numbers.push(r)
 // }
-	
+
+
+// General setting of the enviroment
+//   * create an SVG container
+//   * prepare an axis
 var svg = d3.select("#viz")
 	.append("svg")
 	.attr("width",600)
 .attr("height",400);	
+
+var xAxis = d3.svg.axis()
+.orient("top");
+
+svg.append("g")
+	.attr("class","axis")
+    .attr("transform","translate(10,40)")
+.call(xAxis);
+
+var gnumbers = svg.append("g")
+    .attr("class","numbers")
+.attr("transform","translate(10,60)");
 	
+    
+// Random generator of integers
 function generateNumbers(){
 	var numbers = [];
 	var n = Math.round(Math.random()*15);
@@ -25,7 +43,7 @@ function generateNumbers(){
 
 
 function visualizeNumbers(myNumbers){
-	var gs = svg.selectAll("g")
+	var gs = gnumbers.selectAll("g.number")
 	.data(myNumbers);
 	
 	// exit
@@ -35,6 +53,7 @@ function visualizeNumbers(myNumbers){
 	var gsToAdd = gs
 		.enter()
 		.append("g")
+		.attr("class","number")
 		.attr("transform",function(d,i){
 			return "translate(10,"+(i*14+10)+")";
 		});
@@ -43,13 +62,23 @@ function visualizeNumbers(myNumbers){
 		
 	// update
 	var scale = d3.scale.linear()
-		.domain([0,2500])
+		.domain([0,d3.max(myNumbers)])
 	.range([0,580]);
+	
+	xAxis.scale(scale);
+    
+    svg.select("g.axis")
+    .call(xAxis);
+	
+	var cScale = d3.scale.linear()
+		.domain([0,d3.max(myNumbers)])
+	.range(["#fff", "#f00"]);
 	
 	
 	gs.select("line")
 		.transition()
 		.attr("x2",scale)
+		.attr("stroke",cScale)
 		.duration(1500)
 		;
 	
