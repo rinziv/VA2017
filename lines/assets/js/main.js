@@ -55,7 +55,7 @@ function visualizeNumbers(myNumbers){
 		.append("g")
 		.attr("class","number")
 		.attr("transform",function(d,i){
-			return "translate(10,"+(i*24+10)+")";
+			return "translate(0,"+(i*24+10)+")";
 		});
 	gsToAdd.append("line").attr("x2",0).attr("stroke","black");
 	gsToAdd.append("text")
