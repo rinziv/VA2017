@@ -32,7 +32,7 @@ var gnumbers = svg.append("g")
 // Random generator of integers
 function generateNumbers(){
 	var numbers = [];
-	var n = Math.round(Math.random()*15);
+	var n = 1+Math.round(Math.random()*15);
 	
 	numbers = d3.range(n).map(function(d){
 		return Math.round(Math.random()*2500);
