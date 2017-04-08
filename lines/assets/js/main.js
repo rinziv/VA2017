@@ -55,10 +55,13 @@ function visualizeNumbers(myNumbers){
 		.append("g")
 		.attr("class","number")
 		.attr("transform",function(d,i){
-			return "translate(10,"+(i*14+10)+")";
+			return "translate(10,"+(i*24+10)+")";
 		});
 	gsToAdd.append("line").attr("x2",0).attr("stroke","black");
-	gsToAdd.append("text").attr("x",0);	
+	gsToAdd.append("text")
+		.attr("text-anchor","end")
+		.attr("dy",-2)
+		.attr("x",0);	
 		
 	// update
 	var scale = d3.scale.linear()
@@ -84,7 +87,7 @@ function visualizeNumbers(myNumbers){
 	
 	gs.select("text")
 		.transition()
-		.attr("x",function(d){return scale(d)+4})
+		.attr("x",function(d){return scale(d)})
 		.duration(1500)
 		.text(function(d){return d});
 }
