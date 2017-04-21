@@ -44,7 +44,7 @@ function generateNumbers(){
 
 function visualizeNumbers(myNumbers){
 	var gs = gnumbers.selectAll("g.number")
-	.data(myNumbers);
+	.data(myNumbers.sort());
 	
 	// exit
 	var gsToRemove = gs.exit().remove();
@@ -73,10 +73,15 @@ function visualizeNumbers(myNumbers){
     svg.select("g.axis")
     .call(xAxis);
 	
-	var cScale = d3.scale.linear()
-		.domain([0,d3.max(myNumbers)])
-	.range(["#fff", "#f00"]);
+	// var cScale = d3.scale.linear()
+	// 	.domain([0,d3.max(myNumbers)])
+	// .range(["#fff", "#f00"]);
+	var cScale = d3.scale.quantile()
+		.domain(myNumbers)
+	.range(colorbrewer['Purples'][4]);
+	//.range(["#fee0d2","#fc9272","#de2d26"]);  // Reds-3classes
 	
+
 	
 	gs.select("line")
 		.transition()
