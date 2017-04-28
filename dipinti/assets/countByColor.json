@@ -1,0 +1,215 @@
+[
+    {
+        "key": "Colors Count",
+        "values": [
+            {
+                "x": "cornflowerblue",
+                "y": 11
+            },
+            {
+                "x": "powderblue",
+                "y": 12
+            },
+            {
+                "x": "skyblue",
+                "y": 12
+            },
+            {
+                "x": "oldlace",
+                "y": 15
+            },
+            {
+                "x": "thistle",
+                "y": 16
+            },
+            {
+                "x": "blanchedalmond",
+                "y": 17
+            },
+            {
+                "x": "olivedrab",
+                "y": 19
+            },
+            {
+                "x": "navajowhite",
+                "y": 24
+            },
+            {
+                "x": "cadetblue",
+                "y": 31
+            },
+            {
+                "x": "goldenrod",
+                "y": 31
+            },
+            {
+                "x": "midnightblue",
+                "y": 32
+            },
+            {
+                "x": "steelblue",
+                "y": 34
+            },
+            {
+                "x": "firebrick",
+                "y": 40
+            },
+            {
+                "x": "beige",
+                "y": 46
+            },
+            {
+                "x": "white",
+                "y": 47
+            },
+            {
+                "x": "snow",
+                "y": 53
+            },
+            {
+                "x": "darkgoldenrod",
+                "y": 56
+            },
+            {
+                "x": "lavender",
+                "y": 59
+            },
+            {
+                "x": "darkseagreen",
+                "y": 67
+            },
+            {
+                "x": "whitesmoke",
+                "y": 75
+            },
+            {
+                "x": "khaki",
+                "y": 91
+            },
+            {
+                "x": "chocolate",
+                "y": 101
+            },
+            {
+                "x": "palegoldenrod",
+                "y": 124
+            },
+            {
+                "x": "linen",
+                "y": 125
+            },
+            {
+                "x": "bisque",
+                "y": 145
+            },
+            {
+                "x": "lightsteelblue",
+                "y": 148
+            },
+            {
+                "x": "darkslateblue",
+                "y": 154
+            },
+            {
+                "x": "antiquewhite",
+                "y": 246
+            },
+            {
+                "x": "sandybrown",
+                "y": 282
+            },
+            {
+                "x": "slategray",
+                "y": 334
+            },
+            {
+                "x": "brown",
+                "y": 336
+            },
+            {
+                "x": "darksalmon",
+                "y": 388
+            },
+            {
+                "x": "lightslategrey",
+                "y": 505
+            },
+            {
+                "x": "indianred",
+                "y": 589
+            },
+            {
+                "x": "gainsboro",
+                "y": 705
+            },
+            {
+                "x": "maroon",
+                "y": 732
+            },
+            {
+                "x": "wheat",
+                "y": 1155
+            },
+            {
+                "x": "lightgray",
+                "y": 1199
+            },
+            {
+                "x": "burlywood",
+                "y": 1302
+            },
+            {
+                "x": "darkkhaki",
+                "y": 1892
+            },
+            {
+                "x": "darkgray",
+                "y": 2040
+            },
+            {
+                "x": "silver",
+                "y": 2287
+            },
+            {
+                "x": "tan",
+                "y": 3163
+            },
+            {
+                "x": "peru",
+                "y": 3298
+            },
+            {
+                "x": "rosybrown",
+                "y": 3490
+            },
+            {
+                "x": "grey",
+                "y": 4538
+            },
+            {
+                "x": "saddlebrown",
+                "y": 4853
+            },
+            {
+                "x": "dimgrey",
+                "y": 6246
+            },
+            {
+                "x": "sienna",
+                "y": 6891
+            },
+            {
+                "x": "darkolivegreen",
+                "y": 10366
+            },
+            {
+                "x": "darkslategray",
+                "y": 13633
+            },
+            {
+                "x": "black",
+                "y": 16473
+            }
+        ]
+    }
+]

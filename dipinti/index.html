@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Titolo della pagina</title>
+		
+		<link rel="stylesheet" href="node_modules/nvd3/build/nv.d3.min.css" type="text/css" media="screen">
+		
+		
+		<script src="node_modules/d3/d3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="node_modules/nvd3/build/nv.d3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body >
+		<h1 id="colors">Colors of Art</h1>
+		<p>Spiegone.....</p>
+		<div id="viz">
+			
+		</div>
+		<script type="text/javascript">
+			var svg = d3.select("#viz")
+				.append("svg")
+				.attr("width",600)
+			.attr("height",400);
+			
+			d3.json("assets/countByColor.json",function(error,data){
+				console.log(data);
+				var chart = nv.models.multiBarHorizontalChart();
+				
+				svg
+				.datum(data)
+				.call(chart);
+				
+				svg.selectAll("rect")
+				.attr("fill", function(d,i){return d.x});
+			})
+			
+		</script>
+	</body>
+	
+</html>	
