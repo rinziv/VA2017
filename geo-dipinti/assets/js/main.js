@@ -107,6 +107,15 @@ function app(){
 				.attr("class","circles")
 				.datum(fcMuseums)
 			.call(map);
+			
+		var zoom = d3.behavior.zoom()
+		    .on("zoom",function() {
+		        svg.selectAll("g").attr("transform","translate("+ 
+		            d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+		  });
+
+		  svg.call(zoom);
+			
 		})
 	}
 	
