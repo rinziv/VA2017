@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "d3": "^3.5.17"
+    "d3": "^3.5.17",
+    "d3-queue": "^3.0.5"
   }
 }
