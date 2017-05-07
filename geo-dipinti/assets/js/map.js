@@ -34,6 +34,10 @@ function MapWithLayers(){
 			.enter()
 			.append("path")
 		.attr("d", path);
+		
+		// gmap.append("path")
+		// .datum(selection.datum())
+		// .attr("d", path);
 	}
 	
 	

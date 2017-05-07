@@ -29,6 +29,11 @@ function app(){
 			
 			console.log("opere", opere);
 			
+			// visualization arranged in layers
+			//  svg
+			//    +--g.map
+			//       +--- g.mapLayer
+			//.......+--- g.circles
 			
 			// prepare map 
 			map.scale(390)
