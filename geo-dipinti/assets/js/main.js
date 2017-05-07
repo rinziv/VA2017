@@ -5,13 +5,16 @@
 
 
 function app(){
+	var svg;
+	var map = MapWithLayers(); //using custom module to handle the map
+	
 	
 	function me(selection){
 		console.log("MyApp Component");
 		
 		
 		//  create SVG container
-		selection.append("svg")
+		svg = selection.append("svg")
 		.attr({width:600, height:400});
 		
 		
@@ -25,7 +28,17 @@ function app(){
 			if(error) throw error;
 			
 			console.log("opere", opere);
-			console.log("world", world);
+			
+			
+			// prepare map 
+			map.scale(390)
+			.center([-47,50]);
+			svg.append("g")
+				.attr("class","map")
+				.datum(world)
+			.call(map);
+			
+			
 		})
 	}
 	
