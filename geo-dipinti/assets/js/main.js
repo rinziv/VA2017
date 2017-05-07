@@ -44,6 +44,44 @@ function app(){
 			.call(map);
 			
 			
+			// aggregate data for paintings
+			// * select only a subset of fields
+			// * counte number of paintings for each museum
+			// * store the coordinates of each museum
+			
+			// create a dictionary of museums. 
+			var museums = {};
+			
+			// scan opere to extract relevant information
+			var paintings = opere.map(function(d,i){
+				// create a modified version of each data entry
+				// selectiong a subset of attributes
+				var p = {
+					// convert strings to numbers
+					ANNO_ARTWORK: +d.ANNO_ARTWORK, 
+					ARTWORK_PLACE_LAT: +d.ARTWORK_PLACE_LAT,
+					ARTWORK_PLACE_LON: +d.ARTWORK_PLACE_LON,
+
+					// select only a few attributes
+					ARTWORK_PLACE: d.ARTWORK_PLACE,
+					MUSEUM: d.MUSEUM,
+					TECHNIQUE: d.TECHNIQUE,
+					TYPE: d.TYPE,
+					SCHOOL: d.SCHOOL,
+					// discard all the others
+				}
+				
+				// save coordiante and data of museum in the dictionary
+				var m = museums[d.MUSEUM.toLowerCase()] || (museums[d.MUSEUM.toLowerCase()] = {name: d.MUSEUM, point: [+d.ARTWORK_PLACE_LON, +d.ARTWORK_PLACE_LAT], place: d.ARTWORK_PLACE, count:0});
+				// update count of paintings for current museum
+				m.count++;
+				
+				return p;
+					
+			})
+			console.log("museums",museums);
+			console.log("paintings", paintings);
+			
 		})
 	}
 	
