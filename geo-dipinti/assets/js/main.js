@@ -59,8 +59,6 @@ function app(){
 				var p = {
 					// convert strings to numbers
 					ANNO_ARTWORK: +d.ANNO_ARTWORK, 
-					ARTWORK_PLACE_LAT: +d.ARTWORK_PLACE_LAT,
-					ARTWORK_PLACE_LON: +d.ARTWORK_PLACE_LON,
 
 					// select only a few attributes
 					ARTWORK_PLACE: d.ARTWORK_PLACE,
@@ -80,7 +78,6 @@ function app(){
 					
 			})
 			console.log("museums",museums);
-			console.log("paintings", paintings);
 			
 			// transform data of museums to match the format required by MapWithLayers
 			// Creating a FeatureColletion of Museums
@@ -108,13 +105,27 @@ function app(){
 				.datum(fcMuseums)
 			.call(map);
 			
-		var zoom = d3.behavior.zoom()
-		    .on("zoom",function() {
-		        svg.selectAll("g").attr("transform","translate("+ 
-		            d3.event.translate.join(",")+")scale("+d3.event.scale+")");
-		  });
+			var zoom = d3.behavior.zoom()
+			.on("zoom",function() {
+				svg.selectAll("g").attr("transform","translate("+ 
+				d3.event.translate.join(",")+")scale("+d3.event.scale+")");
+			});
 
-		  svg.call(zoom);
+			svg.call(zoom);
+			
+			
+			// Create container for charts
+			// We will implement a chart for each of the following dimensions:
+			// Technique, Type, School
+			var dimensions = ["Technique", "Type", "School"];
+			var chart = Chart();
+			var charts = d3.select("#charts");
+			
+			charts.append("div")
+				.classed("chart-technique", true)
+				.classed("col-md-4",true)
+				.datum(paintings)
+			.call(chart);
 			
 		})
 	}
