@@ -11,6 +11,9 @@ function MapWithLayers(){
 	var center = [0,0]; // default value for centering the map
 	var path;
 	var gmap;
+	var radius = d3.scale.sqrt()
+	.domain([0,300])
+	.range([0,20]);
 	
 	function me(selection){
 		console.log("MapWithLayers", selection.datum());
@@ -23,6 +26,10 @@ function MapWithLayers(){
 		.translate([boundaries.width/2, boundaries.height/2]);
 		
 		path = d3.geo.path().projection(projection);
+		
+		path.pointRadius(function(d){
+			return radius(d.properties.count);
+		})
 		
 		
 		// create a group container for map
@@ -58,6 +65,7 @@ function MapWithLayers(){
 		
 		return me;
 	}
+	
 	
 	
 	return me;
