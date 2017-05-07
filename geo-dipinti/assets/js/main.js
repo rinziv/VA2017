@@ -7,7 +7,9 @@
 function app(){
 	var svg;
 	var map = MapWithLayers(); //using custom module to handle the map
-	
+	var dimensions = ["Technique", "Type", "School"];
+	var charts = d3.select("#charts");
+	var myCharts = [];
 	
 	function me(selection){
 		console.log("MyApp Component");
@@ -103,7 +105,8 @@ function app(){
 			svg.append("g")
 				.attr("class","circles")
 				.datum(fcMuseums)
-			.call(map);
+			.call(map)
+			.selectAll("path").on("click", function(d){selectedMuseum(d);});
 			
 			var zoom = d3.behavior.zoom()
 			.on("zoom",function() {
@@ -117,21 +120,33 @@ function app(){
 			// Create container for charts
 			// We will implement a chart for each of the following dimensions:
 			// Technique, Type, School
-			var dimensions = ["Technique", "Type", "School"];
-			var charts = d3.select("#charts");
+			
 			
 			
 			
 			dimensions.forEach(function(d){
 				var chart = Chart().dimension(d);
+				myCharts.push(chart);
 				charts.append("div")
-					.classed("chart-technique", true)
+					.classed("chart-"+d, true)
 					.classed("col-md-4",true)
 					.datum(paintings)
 				.call(chart);
 			})
 			
 		})
+	}
+	
+	
+	function selectedMuseum(m){
+		console.log(m)
+		dimensions.forEach(function(d,i){
+			var chart = myCharts[i];
+			chart.museum(m.properties.name);
+			charts.select("div.chart-"+d)
+			.call(chart);
+		})
+		
 	}
 	
 	return me;

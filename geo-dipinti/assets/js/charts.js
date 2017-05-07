@@ -21,7 +21,7 @@ function Chart(){
 				.showLegend(false)
 				.showControls(false);
 		}
-		svg.datum(groupDataBy(selection.datum(),dimension))
+		svg.datum(groupDataBy(selection.datum(),dimension,museum))
 		.call(nvchart);
 	}
 	
@@ -32,13 +32,19 @@ function Chart(){
 		return me;
 	}
 	
+	me.museum = function(_){
+		if(!arguments.length) return museum;
+		museum = _;
+		
+		return me;
+	}
 	
 	function groupDataBy(data, dimension, museum){
 		var filtered;
 		if(!museum){
 			filtered = data;
 		}else{
-			filtered = data.filter(function(d){return m.MUSEUM==museum})
+			filtered = data.filter(function(d){return d.MUSEUM==museum})
 		}
 		
 		var grouped = d3.nest()

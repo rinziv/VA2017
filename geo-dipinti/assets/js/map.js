@@ -42,7 +42,7 @@ function MapWithLayers(){
 			.enter()
 			.append("path")
 		.attr("d", path)
-		.on("click", function(d){console.log(d)});
+		;
 		
 		// gmap.append("path")
 		// .datum(selection.datum())
