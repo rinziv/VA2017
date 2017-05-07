@@ -82,6 +82,31 @@ function app(){
 			console.log("museums",museums);
 			console.log("paintings", paintings);
 			
+			// transform data of museums to match the format required by MapWithLayers
+			// Creating a FeatureColletion of Museums
+			var fcMuseums = {
+				type:"FeatureCollection",
+				features: d3.values(museums).map(function(d,i){  // for each entry in Museums dictionary
+					return {
+						type:"Feature",
+						properties:{
+							name:d.name,
+							place:d.place,
+							count: d.count
+						},
+						geometry:{
+							type:"Point",
+							coordinates:d.point
+						}
+					}
+				})
+			};
+			console.log("fcMuseums", fcMuseums);
+			// create a new g to contain circles
+			svg.append("g")
+				.attr("class","circles")
+				.datum(fcMuseums)
+			.call(map);
 		})
 	}
 	
