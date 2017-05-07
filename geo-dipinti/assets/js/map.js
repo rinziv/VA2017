@@ -40,7 +40,8 @@ function MapWithLayers(){
 			.data(selection.datum().features.filter(function(d){return d.properties.CNTR_ID != "AQ"}))
 			.enter()
 			.append("path")
-		.attr("d", path);
+		.attr("d", path)
+		.on("click", function(d){console.log(d)});
 		
 		// gmap.append("path")
 		// .datum(selection.datum())
