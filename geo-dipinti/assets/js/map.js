@@ -33,8 +33,9 @@ function MapWithLayers(){
 		
 		
 		// create a group container for map
-		gmap = selection.append("g")
-		.attr("class","mapLayer");
+		// gmap = selection.append("g")
+// 		.attr("class","mapLayer");
+		gmap = selection;
 		
 		gmap.selectAll("path")
 			.data(selection.datum().features.filter(function(d){return d.properties.CNTR_ID != "AQ"}))
@@ -66,7 +67,6 @@ function MapWithLayers(){
 		
 		return me;
 	}
-	
 	
 	
 	return me;

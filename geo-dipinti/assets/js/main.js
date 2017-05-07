@@ -118,14 +118,18 @@ function app(){
 			// We will implement a chart for each of the following dimensions:
 			// Technique, Type, School
 			var dimensions = ["Technique", "Type", "School"];
-			var chart = Chart();
 			var charts = d3.select("#charts");
 			
-			charts.append("div")
-				.classed("chart-technique", true)
-				.classed("col-md-4",true)
-				.datum(paintings)
-			.call(chart);
+			
+			
+			dimensions.forEach(function(d){
+				var chart = Chart().dimension(d);
+				charts.append("div")
+					.classed("chart-technique", true)
+					.classed("col-md-4",true)
+					.datum(paintings)
+				.call(chart);
+			})
 			
 		})
 	}

@@ -25,6 +25,14 @@ function Chart(){
 		.call(nvchart);
 	}
 	
+	me.dimension = function(_){
+		if(!arguments.length) return dimension;
+		dimension = _;
+		
+		return me;
+	}
+	
+	
 	function groupDataBy(data, dimension, museum){
 		var filtered;
 		if(!museum){
@@ -48,6 +56,8 @@ function Chart(){
 			}
 		]
 	}
+	
+	
 	
 	return me;
 }
