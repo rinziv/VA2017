@@ -15,7 +15,7 @@ function app(){
 		
 		//  create SVG container
 		svg = selection.append("svg")
-		.attr({width:600, height:400});
+		.attr({width:"100%", height:400});
 		
 		
 		// load data
