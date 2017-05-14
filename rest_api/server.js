@@ -29,6 +29,22 @@ router.route('/painting')
 		})
 	});
 	
+
+router.route('/painting/byauthor/:author')
+	.get(function(req, res){
+		fs.readFile("assets/data/opere_colori.csv", "utf-8", function(error, opere){
+			if(error) res.send(error);
+			
+			data = dsv.parse(opere);
+			
+			res.json(data.filter(function(d){
+				return d["AUTHOR"].toLowerCase().indexOf(req.params.author.toLowerCase()) >= 0
+			}));
+		})
+	})
+
+
+
 // define a prefix for all the URLs
 app.use('/api', router);
 
