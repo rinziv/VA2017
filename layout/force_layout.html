@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Simple Force Layout</title>
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen">
+    <script src="node_modules/d3/d3.min.js" type="text/javascript" charset="utf-8"></script>
+		
+	<style>
+	.node {
+	  stroke: #fff;
+	  stroke-width: 1.5px;
+	}
+
+	.link {
+	  stroke: #999;
+	  stroke-opacity: .6;
+	}
+	</style>
+  </head>
+  <body>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Force Layout</h1>
+			<p>Force layout with Miserables book networks.</p>
+			<p>Adapted from the example by <a href="http://bl.ocks.org/mbostock/4062045">Mike Bostock</a></p>
+		</div>
+	</div>
+	<div class="container">
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>Visualization</h2>
+				<div id="viz"></div>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<footer>
+		<p>Visual Analytics Course - 2015-2016</p>
+	</footer>
+	</div>
+<script src="assets/js/force.js" type="text/javascript" charset="utf-8"></script>
+
+
+  </body>
+</html>

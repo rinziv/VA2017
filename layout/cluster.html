@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bar Chart with Ordinal Scale</title>
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen">
+    <script src="node_modules/d3/d3.min.js" type="text/javascript" charset="utf-8"></script>
+    
+		
+		<style>
+
+		.node circle {
+		  fill: #fff;
+		  stroke: steelblue;
+		  stroke-width: 1.5px;
+		}
+
+		.node {
+		  font: 10px sans-serif;
+		}
+
+		.link {
+		  fill: none;
+		  stroke: #ccc;
+		  stroke-width: 1.5px;
+		}
+
+		</style>
+  </head>
+  <body>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Dendrogram Example</h1>
+			<p>A dendrogram is a node-link diagram that places leaf nodes of the tree at the same depth. In this example, the classes (leaf nodes) are aligned on the right edge, with the packages (internal nodes) to the left. Data shows the Flare class hierarchy, by Jeff Heer.</p>
+			<p>Adapted from the example by <a href="http://bl.ocks.org/mbostock/4063570">Mike Bostocks</a></p>
+		</div>
+	</div>
+	<div class="container">
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-sm-4">
+				<h2>D3 features:</h2>
+				<ol>
+					<li>d3.layout - Layout utility</li>
+					<li>d3.svg.diagonal - creation of cubic bezier line to connect nodes</li>
+				</ol>
+			</div>
+			<div class="col-sm-8">
+				<h2>Visualization</h2>
+				<div id="viz"></div>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<footer>
+		<p>Visual Analytics Course - 2015-2016</p>
+	</footer>
+	</div>
+
+
+	
+<script src="assets/js/cluster.js" type="text/javascript" charset="utf-8"></script>
+
+	
+  </body>
+</html>
