@@ -35,3 +35,7 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+geo-dipinti/assets/\.DS_Store
+
+\.DS_Store
